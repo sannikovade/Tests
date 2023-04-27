@@ -20,8 +20,19 @@ public class SavingsAccount extends Account {
 
     @Override
     public boolean add(long amount) {
-        balance += amount;
-        return true;
+        if (amount >= 0) {
+            balance += amount;
+            return true;
+        }
+        return false;
+    }
+
+    public void setMinimalBalance(long newMinBalance){
+        if (newMinBalance >= 0){
+            minimalBalance = newMinBalance;
+        } else {
+            throw new IllegalArgumentException("Minimal balance of savings account can't be negative!");
+        }
     }
 
 }

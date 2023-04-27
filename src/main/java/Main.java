@@ -38,4 +38,5 @@ public class Main {
         credit.accept(10000);
 
     }
+
 }
